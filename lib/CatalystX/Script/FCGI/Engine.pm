@@ -3,7 +3,7 @@ use Moose;
 use FCGI::Engine;
 use namespace::autoclean;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 extends 'Catalyst::Script::FastCGI';
 
@@ -21,8 +21,9 @@ sub _run_application {
     delete($args->{pidfile}) unless $args->{pidfile};
     FCGI::Engine->new(
         handler_class => $self->application_name,
-        handler_method => 'run',
+        handler_method => 'handle_request',
         pre_fork_init => sub {},
+        handler_args_builder => sub {},
         @listen,
         @detach,
         %$args,
