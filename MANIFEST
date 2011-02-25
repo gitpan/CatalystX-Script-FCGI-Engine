@@ -18,9 +18,3 @@ README
 t/00-load.t
 t/author/pod-coverage.t
 t/author/pod.t
-t/lib/Makefile.PL
-t/lib/script/testapp_server.pl
-t/lib/script/testapp_test.pl
-t/lib/TestApp.pm
-t/lib/TestApp/Controller/Root.pm
-t/live-test.t
